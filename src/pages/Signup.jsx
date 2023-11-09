@@ -97,7 +97,7 @@ const Signup = () => {
           </div>
 
           <div className="w-full  mx-auto flex justify-center h-full items-center px-8 relative">
-            <form className="flex flex-col bg-[#17151b] p-8 rounded-md   md:w-[400px] h-full w-full  justify-center mx-auto gap-4">
+            <form className="flex flex-col bg-[#17151b] p-8 rounded-md   md:w-[400px]  w-full  justify-center mx-auto gap-4">
               <div>
                 <p className="text-2xl text-center uppercase font-bold text-[#9adc59]">
                   Criar conta
@@ -140,7 +140,7 @@ const Signup = () => {
                   required
                 />
 
-                <input
+                {/* <input
                   id="cadastroSenha"
                   className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
                   type="text"
@@ -156,7 +156,7 @@ const Signup = () => {
                   name="Senha"
                   placeholder="País"
                   required
-                />
+                /> */}
               </div>
               <div className="flex items-center ml-2 w-full">
                 <input type="checkbox" required />
@@ -185,7 +185,7 @@ const Signup = () => {
 
           <div className="w-full max-w-[80px] mx-auto flex justify-center items-center ">
             <img
-              className="w-full  flex justify-center items-center mx-auto grayscale hover:grayscale-0 transition-all duration-300 "
+              className="w-full  flex justify-center items-center mx-auto grayscale hover:grayscale-0 transition ease-in-out duration-500 "
               src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698936424/Ada/gaym0a7dqpbygkq2jeo7.png"
               alt=""
             />
