@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
+import KnowGames from "./components/KnowGames";
 
 const Home = () => {
   const settings = {
@@ -15,9 +16,51 @@ const Home = () => {
     pauseOnHover: true,
     arrows: true,
   };
+
+  useEffect(() => {
+    const stickyHeader = () => {
+      const header = document.querySelector("header");
+
+      if (header) {
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 100) {
+            header.classList.remove("transparent");
+            header.classList.add(
+              "border-b",
+              "border-[#9adc59]",
+              "bg-[#0b0a0e]",
+              "transition-colors",
+              "duration-300",
+              "ease-in-out"
+            );
+          } else {
+            header.classList.remove(
+              "border-b",
+              "border-[#9adc59]",
+              "bg-[#0b0a0e]"
+            );
+            header.classList.add(
+              "transparent",
+              "transition-colors",
+              "duration-300",
+              "ease-in-out"
+            );
+          }
+        });
+      }
+    };
+
+    stickyHeader();
+
+    // Cleanup do evento ao desmontar o componente
+    return () => {
+      window.removeEventListener("scroll", stickyHeader);
+    };
+  }, []);
+
   return (
     <div className="w-full h-full relative">
-      <header className="w-full z-30 transparent p-4 border-b border-[#9adc59] fixed">
+      <header className="w-full z-30 transparent p-4  fixed transition-all ">
         <div className="container mx-auto flex justify-between items-center">
           <div className="w-full max-w-[80px] md:max-w-[80px] mx-auto flex justify-center items-center">
             <img
@@ -80,7 +123,17 @@ const Home = () => {
                 </button>
               </div>
             </div>
-            <div className="w-[45%] h-full flex flex-col bg-[url('/public/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S1_2560x1440-73702d11161b29a0b7c40a8b489b1808.jpeg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
+
+            <div className="w-[45%] h-full">
+              <div className="relative w-full h-full flex flex-col bg-[url('/public/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S1_2560x1440-73702d11161b29a0b7c40a8b489b1808.jpeg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
+              <div className="w-full flex justify-end">
+                <img
+                  className="w-1/2 grayscale-0 relative top-0 right-0"
+                  src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1699490573/Ada/id2mtkothdjwd1yml8v4.png"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
           <div className="w-full absolute max-w-[80px] mx-auto flex justify-center items-center bottom-8 ">
             <img
@@ -89,29 +142,6 @@ const Home = () => {
               alt=""
             />
           </div>
-          {/* <Slider {...settings}>
-          <div>
-            <img
-              src="https://i.pinimg.com/736x/b3/c7/23/b3c723820ac7f5e45c331a03c4ad8f2c.jpg"
-              alt=""
-            />
-          </div>
-          <div>
-            <h3>2</h3>
-          </div>
-          <div>
-            <h3>3</h3>
-          </div>
-          <div>
-            <h3>4</h3>
-          </div>
-          <div>
-            <h3>5</h3>
-          </div>
-          <div>
-            <h3>6</h3>
-          </div>
-        </Slider> */}
         </div>
       </div>
       {/* Segunda Seção */}
@@ -145,7 +175,93 @@ const Home = () => {
           </Slider>
         </div>
       </section>
-      <section className="container w-full mx-auto bg-black"></section>
+      <div className="relative w-full h-[80vh] items-center justify-center">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699495713/Ada/qmzmz7ijroxi1gf5pdrs.png')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20">
+          <div className="items-center h-full max-h-[400px] justify-between w-full flex gap-4">
+            <div className="w-[45%] h-full">
+              <div className="w-full flex ">
+                <div className="w-full h-[3px] bg-white "></div>
+                <div className="w-full h-[3px] bg-slate-400"></div>
+                <div className="w-full h-[3px] bg-[#9adc59]"></div>
+              </div>
+              <div className="relative w-full h-full flex flex-col bg-[url('/public/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S1_2560x1440-73702d11161b29a0b7c40a8b489b1808.jpeg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
+              <div className="w-full flex justify-start">
+                <img
+                  className="w-1/2 grayscale-0 relative top-0 right-0"
+                  src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1699490573/Ada/id2mtkothdjwd1yml8v4.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="w-[45%] h-full flex flex-col  justify-start">
+              <div className="flex flex-col">
+                <h2 className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold  ">
+                  Conte sua
+                </h2>
+                <span className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold text-end">
+                  Experiência!
+                </span>
+              </div>
+              <div className="w-full flex justify-end">
+                <p className="text-slate-400 font-chakra text-end">
+                  Compartilhe sua opinião e as experiências que os jogos te
+                  proporcionaram!
+                </p>
+              </div>
+              <div className="w-full flex justify-center items-center mt-4 gap-4">
+                <img
+                  className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
+                  src="/public/logo-steam-original.png"
+                  alt=""
+                />
+                <img
+                  className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
+                  src="/public/PlayStation-Logo-1994.png"
+                  alt=""
+                />
+                <img
+                  className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
+                  src="/public/768px-Xbox_one_logo.svg.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section className="w-full py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center mx-auto bg-fixed relative">
+        <div className="container mx-auto w-full ">
+          <div className="items-center h-full  justify-between w-full flex flex-col gap-4">
+            <div className="w-full flex flex-col  ">
+              <div className="flex bg-[#0b0a0e] h-full gap-4 ">
+                <div className="flex items-center justify-center flex-col">
+                  <div className="w-[3px] h-full bg-white "></div>
+                  <div className="w-[3px] h-full bg-slate-400"></div>
+                  <div className="w-[3px] h-full bg-[#9adc59]"></div>
+                </div>
+                <div className="w-full flex flex-col">
+                  <span className="font-chakra text-[30px] text-[#9adc59] uppercase font-bold ">
+                    Você conhece esses jogos?
+                  </span>
+                  <p className="text-slate-400 font-chakra">
+                    Compartilhe sua opinião sobre os jogos ou conheça eles
+                    agora!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <KnowGames />
+        </div>
+      </section>
     </div>
   );
 };

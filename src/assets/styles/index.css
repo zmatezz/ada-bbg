@@ -9,3 +9,23 @@
   box-sizing: border-box;
   font-family: "Segoe UI Symbol";
 }
+
+header.sticky {
+  background: white;
+  padding: 12px 15%;
+  box-shadow: 0px 3px 8px rgba(255, 0, 0, 0.2);
+}
+
+.border-transition {
+  transition: border-color 0.1s ease-in;
+}
+
+.bg-transition {
+  transition: background-color 0.1s ease-in;
+}
+
+.segundo-slick .slick-track {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
