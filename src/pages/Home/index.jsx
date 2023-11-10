@@ -59,7 +59,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-full h-full relative">
+    <div className=" w-full h-full relative">
       <header className="w-full z-30 transparent p-4  fixed transition-all ">
         <div className="container mx-auto flex justify-between items-center">
           <div className="w-full max-w-[80px] md:max-w-[80px] mx-auto flex justify-center items-center">
@@ -69,7 +69,7 @@ const Home = () => {
               alt=""
             />
           </div>
-          <div className="w-full flex justify-end items-center gap-3">
+          <div className="w-full hidden md:flex justify-end items-center gap-3 ">
             <p className="font-chakra font-bold text-slate-400 hover:text-[#9adc59]">
               jogos
             </p>
@@ -90,19 +90,19 @@ const Home = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-        <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20">
-          <div className="items-center h-full max-h-[400px] justify-between w-full flex gap-4">
-            <div className="w-[45%] h-full flex flex-col  justify-between">
+        <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20 px-10 md:px-0">
+          <div className="items-center h-full max-h-[400px] justify-between w-full flex flex-col md:flex-row gap-4">
+            <div className="w-full md:w-[45%] h-full flex flex-col  justify-between">
               <div className="w-full flex">
                 <div className="w-full h-[3px] bg-white "></div>
                 <div className="w-full h-[3px] bg-slate-400"></div>
                 <div className="w-full h-[3px] bg-[#9adc59]"></div>
               </div>
-              <div className="flex flex-col">
-                <h2 className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold ">
+              <div className="flex flex-row md:flex-col gap-2 md:gap-0 ">
+                <h2 className="relative font-chakra  text-xl md:text-7xl text-[#9adc59] uppercase font-bold ">
                   Best Browser
                 </h2>
-                <span className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold ">
+                <span className="font-chakra text-xl md:text-7xl text-[#9adc59] uppercase font-bold ">
                   Games
                 </span>
               </div>
@@ -124,8 +124,8 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="w-[45%] h-full">
-              <div className="relative w-full h-full flex flex-col bg-[url('/public/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S1_2560x1440-73702d11161b29a0b7c40a8b489b1808.jpeg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
+            <div className="w-full md:w-[45%] h-full">
+              <div className="relative w-full h-full flex flex-col bg-[url('https://s3b.cashify.in/gpro/uploads/2022/05/25010007/Best-Browser-Games.jpg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700 bg-center"></div>
               <div className="w-full flex justify-end">
                 <img
                   className="w-1/2 grayscale-0 relative top-0 right-0"
@@ -135,7 +135,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="w-full absolute max-w-[80px] mx-auto flex justify-center items-center bottom-8 ">
+          <div className="w-full absolute max-w-[40px] md:max-w-[80px] mx-auto flex justify-center items-center bottom-8 ">
             <img
               className="w-full  flex justify-center items-center mx-auto grayscale hover:grayscale-0 transition-all duration-300 "
               src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698936424/Ada/gaym0a7dqpbygkq2jeo7.png"
@@ -145,7 +145,7 @@ const Home = () => {
         </div>
       </div>
       {/* Segunda Seção */}
-      <section className="w-full py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center mx-auto bg-fixed relative">
+      {/* <section className="w-full py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center mx-auto bg-fixed relative">
         <div className="container mx-auto w-full ">
           <div className="items-center h-full  justify-between w-full flex flex-col gap-4">
             <div className="w-full flex flex-col  ">
@@ -191,7 +191,7 @@ const Home = () => {
                 <div className="w-full h-[3px] bg-slate-400"></div>
                 <div className="w-full h-[3px] bg-[#9adc59]"></div>
               </div>
-              <div className="relative w-full h-full flex flex-col bg-[url('/public/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S1_2560x1440-73702d11161b29a0b7c40a8b489b1808.jpeg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
+              <div className="relative w-full h-full flex flex-col bg-[url('https://blog.portoseguro.com.br/wordpress/wp-content/uploads/2020/02/RE-equipamentos-gamer-entenda-a-importancia-de-contratar-um-seguro-1536x1024.jpg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
               <div className="w-full flex justify-start">
                 <img
                   className="w-1/2 grayscale-0 relative top-0 right-0"
@@ -218,17 +218,17 @@ const Home = () => {
               <div className="w-full flex justify-center items-center mt-4 gap-4">
                 <img
                   className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
-                  src="/public/logo-steam-original.png"
+                  src="/public/Google_Chrome_icon_(February_2022).svg.webp"
                   alt=""
                 />
                 <img
                   className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
-                  src="/public/PlayStation-Logo-1994.png"
+                  src="/public/Firefox_logo,_2017.svg.png"
                   alt=""
                 />
                 <img
                   className="w-[50px] h-[50px] grayscale hover:grayscale-0 transition-all duration-300"
-                  src="/public/768px-Xbox_one_logo.svg.png"
+                  src="/public/Safari_browser_logo.svg.png"
                   alt=""
                 />
               </div>
@@ -262,6 +262,57 @@ const Home = () => {
           <KnowGames />
         </div>
       </section>
+      <div className="relative w-full p-12 items-center justify-center">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699495713/Ada/qmzmz7ijroxi1gf5pdrs.png')`,
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+        <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20">
+          <div className="container relative items-center h-full max-h-[400px] justify-between w-full flex flex-col gap-4">
+            <div className="w-full h-full">
+              <div className="w-[20%] flex ">
+                <div className="w-full h-[3px] bg-white "></div>
+                <div className="w-full h-[3px] bg-slate-400"></div>
+                <div className="w-full h-[3px] bg-[#9adc59]"></div>
+              </div>
+            </div>
+            <div className="w-full h-full flex flex-col justify-start">
+              <div className="flex flex-col">
+                <h2 className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold text-center ">
+                  LET'S START THE GAME
+                </h2>
+                <p className="text-slate-400 font-chakra text-center">
+                  Feito com 💚 Matheus Costa.
+                </p>
+              </div>
+            </div>
+            <div className="w-full h-full flex justify-end">
+              <div className="w-[20%] flex  ">
+                <div className="w-full h-[3px] bg-white "></div>
+                <div className="w-full h-[3px] bg-slate-400"></div>
+                <div className="w-full h-[3px] bg-[#9adc59]"></div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full flex justify-start">
+            <img
+              className="w-1/4 grayscale-0 relative -bottom-10 right-0"
+              src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1699490573/Ada/id2mtkothdjwd1yml8v4.png"
+              alt=""
+            />
+          </div>
+          <div className="w-full absolute max-w-[80px] mx-auto flex flex-col justify-center items-center bottom-0 ">
+            <img
+              className="w-full  flex justify-center items-center mx-auto grayscale hover:grayscale-0 transition-all duration-300 "
+              src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698936424/Ada/gaym0a7dqpbygkq2jeo7.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div> */}
     </div>
   );
 };
