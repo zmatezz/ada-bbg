@@ -15,6 +15,21 @@ const Home = () => {
     cssEase: "linear",
     pauseOnHover: true,
     arrows: true,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   useEffect(() => {
@@ -60,7 +75,7 @@ const Home = () => {
 
   return (
     <div className=" w-full h-full relative">
-      <header className="w-full z-30 transparent p-4  fixed transition-all ">
+      <header className="w-full z-30 transparent p-4 bg-[#0b0a0e]   transition-all ">
         <div className="container mx-auto flex justify-between items-center">
           <div className="w-full max-w-[80px] md:max-w-[80px] mx-auto flex justify-center items-center">
             <img
@@ -82,7 +97,7 @@ const Home = () => {
           </div>
         </div>
       </header>
-      <div className="relative w-full h-screen">
+      <section className="relative w-full h-screen">
         <div
           className="absolute inset-0"
           style={{
@@ -107,7 +122,7 @@ const Home = () => {
                 </span>
               </div>
               <div className="w-full flex">
-                <p className="text-slate-400 font-chakra">
+                <p className="text-slate-400 font-chakra ">
                   Best Browser Games é o lugar certo pra encontrar os jogos mais
                   irados do momento. Nossa missão é trazer informações sobre os
                   jogos mais incríveis para você.
@@ -126,9 +141,9 @@ const Home = () => {
 
             <div className="w-full md:w-[45%] h-full">
               <div className="relative w-full h-full flex flex-col bg-[url('https://s3b.cashify.in/gpro/uploads/2022/05/25010007/Best-Browser-Games.jpg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700 bg-center"></div>
-              <div className="w-full flex justify-end">
+              <div className="w-full flex justify-start md:justify-end">
                 <img
-                  className="w-1/2 grayscale-0 relative top-0 right-0"
+                  className="w-1/2 grayscale-0 relative "
                   src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1699490573/Ada/id2mtkothdjwd1yml8v4.png"
                   alt=""
                 />
@@ -143,20 +158,20 @@ const Home = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
       {/* Segunda Seção */}
-      {/* <section className="w-full py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center mx-auto bg-fixed relative">
+      <section className="w-full  mx-auto h-full justify-center items-center flex flex-col gap-4 px-10 md:px-0  py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center bg-fixed relative">
         <div className="container mx-auto w-full ">
-          <div className="items-center h-full  justify-between w-full flex flex-col gap-4">
-            <div className="w-full flex flex-col  ">
-              <div className="flex bg-[#0b0a0e] h-full gap-4 ">
+          <div className="items-center  justify-between w-full flex flex-col gap-4">
+            <div className="w-full flex flex-col">
+              <div className="flex bg-[#0b0a0e] gap-4  p-4">
                 <div className="flex items-center justify-center flex-col">
                   <div className="w-[3px] h-full bg-white "></div>
                   <div className="w-[3px] h-full bg-slate-400"></div>
                   <div className="w-[3px] h-full bg-[#9adc59]"></div>
                 </div>
                 <div className="w-full flex flex-col">
-                  <span className="font-chakra text-[30px] text-[#9adc59] uppercase font-bold ">
+                  <span className="font-chakra text-lg md:text-[30px] text-[#9adc59] uppercase font-bold ">
                     Descubra jogos incríveis
                   </span>
                   <p className="text-slate-400 font-chakra">
@@ -167,15 +182,25 @@ const Home = () => {
             </div>
           </div>
           <Slider {...settings}>
-            <div className="w-full h-[460px] bg-cover flex justify-center items-center bg-carousel-1 bg-no-repeat "></div>
-            <div className="w-full h-[460px] bg-cover flex justify-center items-center bg-carousel-2 bg-no-repeat "></div>
-            <div className="w-full h-[460px] bg-cover flex justify-center items-center bg-carousel-3 bg-no-repeat "></div>
-            <div className="w-full h-[460px] bg-cover flex justify-center items-center bg-carousel-4 bg-no-repeat "></div>
-            <div className="w-full h-[460px] bg-cover flex justify-center items-center bg-carousel-5 bg-no-repeat "></div>
+            <img
+              className="w-1/2 max-h-[440px] "
+              src="https://www.nuuvem.com/lp/pt/pascoa-gamer/images/banner-BR.jpg"
+              alt=""
+            />
+            <img
+              className="w-1/2  max-h-[440px]  "
+              src="https://www.nuuvem.com/lp/pt/verao-gamer/images/BR-PRATA-BANNER.jpg"
+              alt=""
+            />
+            <img
+              className="w-1/2  max-h-[440px]  "
+              src="https://www.nuuvem.com/lp/pt/inverno-gamer/images/BANNER-BR.jpg"
+              alt=""
+            />
           </Slider>
         </div>
       </section>
-      <div className="relative w-full h-[80vh] items-center justify-center">
+      <section className="relative h-[50vh] md:h-screen">
         <div
           className="absolute inset-0"
           style={{
@@ -183,16 +208,16 @@ const Home = () => {
           }}
         ></div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
-        <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20">
-          <div className="items-center h-full max-h-[400px] justify-between w-full flex gap-4">
-            <div className="w-[45%] h-full">
+        <div className="pt-4 md:pt-0 w-full mx-auto h-full  md:justify-center items-center flex flex-col relative z-20 px-10 md:px-0 ">
+          <div className="container items-center h-full md:max-h-[400px] justify-between w-full flex flex-col md:flex-row gap-4 py-8 md:py-0">
+            <div className="w-full md:w-[45%] h-full ">
               <div className="w-full flex ">
                 <div className="w-full h-[3px] bg-white "></div>
                 <div className="w-full h-[3px] bg-slate-400"></div>
                 <div className="w-full h-[3px] bg-[#9adc59]"></div>
               </div>
-              <div className="relative w-full h-full flex flex-col bg-[url('https://blog.portoseguro.com.br/wordpress/wp-content/uploads/2020/02/RE-equipamentos-gamer-entenda-a-importancia-de-contratar-um-seguro-1536x1024.jpg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700"></div>
-              <div className="w-full flex justify-start">
+              <div className="relative w-full h-full flex flex-col bg-[url('https://blog.portoseguro.com.br/wordpress/wp-content/uploads/2020/02/RE-equipamentos-gamer-entenda-a-importancia-de-contratar-um-seguro-1536x1024.jpg')] bg-no-repeat bg-cover grayscale border-[#9adc59] border-2 hover:grayscale-0 transition-all duration-700 bg-center"></div>
+              <div className="w-full flex justify-end md:justify-start">
                 <img
                   className="w-1/2 grayscale-0 relative top-0 right-0"
                   src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1699490573/Ada/id2mtkothdjwd1yml8v4.png"
@@ -200,17 +225,17 @@ const Home = () => {
                 />
               </div>
             </div>
-            <div className="w-[45%] h-full flex flex-col  justify-start">
+            <div className="md:w-[45%] flex flex-col h-full  justify-start">
               <div className="flex flex-col">
-                <h2 className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold  ">
+                <h2 className="font-chakra md:text-[80px] text-[#9adc59] uppercase font-bold  ">
                   Conte sua
                 </h2>
-                <span className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold text-end">
+                <span className="font-chakra md:text-[80px] text-[#9adc59] uppercase font-bold md:text-end">
                   Experiência!
                 </span>
               </div>
               <div className="w-full flex justify-end">
-                <p className="text-slate-400 font-chakra text-end">
+                <p className="text-slate-400 font-chakra md:text-end">
                   Compartilhe sua opinião e as experiências que os jogos te
                   proporcionaram!
                 </p>
@@ -235,19 +260,20 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      <section className="w-full py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center mx-auto bg-fixed relative">
+      </section>
+
+      <section className="w-full  mx-auto h-full justify-center items-center flex flex-col gap-4 px-10 md:px-0  py-8 bg-[url('https://res.cloudinary.com/dgeeyohmv/image/upload/v1699500261/Ada/srdl8riyyhrzt9qnzmsy.png')] bg-cover bg-center bg-fixed relative">
         <div className="container mx-auto w-full ">
-          <div className="items-center h-full  justify-between w-full flex flex-col gap-4">
-            <div className="w-full flex flex-col  ">
-              <div className="flex bg-[#0b0a0e] h-full gap-4 ">
+          <div className="container items-center h-full  justify-between w-full flex flex-col gap-4">
+            <div className="container w-full flex flex-col  ">
+              <div className="container flex bg-[#0b0a0e] h-full gap-4 ">
                 <div className="flex items-center justify-center flex-col">
                   <div className="w-[3px] h-full bg-white "></div>
                   <div className="w-[3px] h-full bg-slate-400"></div>
                   <div className="w-[3px] h-full bg-[#9adc59]"></div>
                 </div>
                 <div className="w-full flex flex-col">
-                  <span className="font-chakra text-[30px] text-[#9adc59] uppercase font-bold ">
+                  <span className="font-chakra md:text-[30px] text-[#9adc59] uppercase font-bold ">
                     Você conhece esses jogos?
                   </span>
                   <p className="text-slate-400 font-chakra">
@@ -262,7 +288,7 @@ const Home = () => {
           <KnowGames />
         </div>
       </section>
-      <div className="relative w-full p-12 items-center justify-center">
+      <section className="relative w-full p-12 items-center justify-center">
         <div
           className="absolute inset-0"
           style={{
@@ -271,7 +297,7 @@ const Home = () => {
         ></div>
         <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
         <div className="container w-full mx-auto h-full justify-center items-center flex flex-col relative z-20">
-          <div className="container relative items-center h-full max-h-[400px] justify-between w-full flex flex-col gap-4">
+          <div className="container relative items-center h-full max-h-[400px] justify-between w-full flex flex-col gap-8 md:gap-4">
             <div className="w-full h-full">
               <div className="w-[20%] flex ">
                 <div className="w-full h-[3px] bg-white "></div>
@@ -281,7 +307,7 @@ const Home = () => {
             </div>
             <div className="w-full h-full flex flex-col justify-start">
               <div className="flex flex-col">
-                <h2 className="font-chakra text-[80px] text-[#9adc59] uppercase font-bold text-center ">
+                <h2 className="font-chakra md:text-[80px] text-[#9adc59] uppercase font-bold text-center ">
                   LET'S START THE GAME
                 </h2>
                 <p className="text-slate-400 font-chakra text-center">
@@ -312,7 +338,7 @@ const Home = () => {
             />
           </div>
         </div>
-      </div> */}
+      </section>
     </div>
   );
 };
