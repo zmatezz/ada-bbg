@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import KnowGames from "./components/KnowGames";
 
@@ -32,59 +32,73 @@ const Home = () => {
     ],
   };
 
-  useEffect(() => {
-    const stickyHeader = () => {
-      const header = document.querySelector("header");
+  const [isMenuHidden, setMenuHidden] = useState(true);
 
-      if (header) {
-        window.addEventListener("scroll", () => {
-          if (window.scrollY > 100) {
-            header.classList.remove("transparent");
-            header.classList.add(
-              "border-b",
-              "border-[#9adc59]",
-              "bg-[#0b0a0e]",
-              "transition-colors",
-              "duration-300",
-              "ease-in-out"
-            );
-          } else {
-            header.classList.remove(
-              "border-b",
-              "border-[#9adc59]",
-              "bg-[#0b0a0e]"
-            );
-            header.classList.add(
-              "transparent",
-              "transition-colors",
-              "duration-300",
-              "ease-in-out"
-            );
-          }
-        });
-      }
-    };
-
+  const handleMobileMenuClick = () => {
+    setMenuHidden(!isMenuHidden);
     stickyHeader();
+  };
+
+  const stickyHeader = () => {
+    const header = document.querySelector("header");
+
+    if (header) {
+      if (window.scrollY > 100) {
+        header.classList.remove("transparent");
+        header.classList.add(
+          "border-b",
+          "border-[#9adc59]",
+          "bg-[#0b0a0e]",
+          "transition-colors",
+          "duration-300",
+          "ease-in-out"
+        );
+      } else {
+        header.classList.remove("border-b", "border-[#9adc59]", "bg-[#0b0a0e]");
+        header.classList.add(
+          "transparent",
+          "transition-colors",
+          "duration-300",
+          "ease-in-out"
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    stickyHeader(); // Chama a lógica de stickyHeader na inicialização
+    window.addEventListener("scroll", stickyHeader);
 
     // Cleanup do evento ao desmontar o componente
     return () => {
       window.removeEventListener("scroll", stickyHeader);
     };
-  }, []);
+  }, []); // O array vazio assegura que o useEffect seja executado apenas na inicialização
 
   return (
     <div className=" w-full h-full relative">
-      <header className="w-full z-30 transparent p-4 bg-[#0b0a0e]   transition-all ">
-        <div className="container mx-auto flex justify-between items-center">
-          <div className="w-full max-w-[80px] md:max-w-[80px] mx-auto flex justify-center items-center">
+      <header className="w-full z-30 transparent p-4 transition-all  fixed">
+        <div className="container mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center">
+          <div className="w-full max-w-[60px] md:max-w-[80px] mx-auto flex flex-col md:flex-row justify-center items-center">
             <img
-              className="w-full  flex justify-center items-center mx-auto hover:scale-110 transition-all duration-300 "
+              className="w-full hidden md:flex relative justify-center items-center mx-auto hover:scale-110 transition-all duration-300 "
+              src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698967945/Ada/ilhxvm6qj8ci4guiwbjs.png"
+              alt=""
+            />
+            <img
+              id="mobile-logo"
+              onClick={handleMobileMenuClick}
+              className="w-full flex  md:hidden relative justify-center items-center mx-auto hover:scale-110 transition-all duration-300 "
               src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698967945/Ada/ilhxvm6qj8ci4guiwbjs.png"
               alt=""
             />
           </div>
-          <div className="w-full hidden md:flex justify-end items-center gap-3 ">
+          <div
+            id="navigation-menu"
+            className={`w-full ${
+              isMenuHidden ? "hidden" : ""
+            } text-center mx-auto md:flex flex-col md:flex-row md:justify-end items-center gap-3`}
+          >
             <p className="font-chakra font-bold text-slate-400 hover:text-[#9adc59]">
               jogos
             </p>

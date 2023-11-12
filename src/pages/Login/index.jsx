@@ -8,11 +8,13 @@ export const Login = () => {
       <div className="bg-[rgb(15,11,23)] h-screen md:h-screen w-full ">
         <div className="w-full h-full justify-between flex flex-col items-center mx-auto py-8 md:py-10 md:px-10 gap-4 bg-[url('https://ada-site-frontend.s3.sa-east-1.amazonaws.com/home/home-background.svg')] bg-no-repeat bg-fit bg-right bg-black/40">
           <div className="w-full max-w-[80px] md:max-w-[150px] mx-auto flex justify-center items-center">
-            <img
-              className="w-full  flex justify-center items-center mx-auto hover:scale-110 transition-all duration-300 "
-              src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698967945/Ada/ilhxvm6qj8ci4guiwbjs.png"
-              alt=""
-            />
+            <Link to="/">
+              <img
+                className="w-full  flex justify-center items-center mx-auto hover:scale-110 transition-all duration-300 "
+                src="https://res.cloudinary.com/dgeeyohmv/image/upload/v1698967945/Ada/ilhxvm6qj8ci4guiwbjs.png"
+                alt=""
+              />
+            </Link>
           </div>
 
           <div className="w-full  mx-auto flex justify-center  items-center px-8 relative">
