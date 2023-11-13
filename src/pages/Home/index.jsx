@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import KnowGames from "./components/KnowGames";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const settings = {
@@ -66,15 +67,13 @@ const Home = () => {
   };
 
   useEffect(() => {
-    stickyHeader(); // Chama a lógica de stickyHeader na inicialização
+    stickyHeader();
     window.addEventListener("scroll", stickyHeader);
 
-    // Cleanup do evento ao desmontar o componente
     return () => {
       window.removeEventListener("scroll", stickyHeader);
     };
-  }, []); // O array vazio assegura que o useEffect seja executado apenas na inicialização
-
+  }, []);
   return (
     <div className=" w-full h-full relative">
       <header className="w-full z-30 transparent p-4 transition-all  fixed">
@@ -103,10 +102,10 @@ const Home = () => {
               jogos
             </p>
             <p className="font-chakra font-bold text-slate-400 hover:text-[#9adc59]">
-              login
+              <Link to="/login">login</Link>
             </p>
             <p className="font-chakra font-bold text-slate-400 hover:text-[#9adc59]">
-              cadastrar-se
+              <Link to="/register">cadastrar-se</Link>
             </p>
           </div>
         </div>
