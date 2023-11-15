@@ -129,23 +129,23 @@ const Form = () => {
             required
           />
 
-          {/* <input
-        id="cadastroSenha"
-        className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
-        type="text"
-        name="Senha"
-        placeholder="Estado"
-        required
-      />
+          <input
+            id="cadastroSenha"
+            className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
+            type="text"
+            name="Senha"
+            placeholder="Estado"
+            required
+          />
 
-      <input
-        id="cadastroSenha"
-        className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
-        type="text"
-        name="Senha"
-        placeholder="País"
-        required
-      /> */}
+          <input
+            id="cadastroSenha"
+            className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
+            type="text"
+            name="Senha"
+            placeholder="País"
+            required
+          />
         </div>
         <div className="flex items-center ml-2 w-full">
           <input type="checkbox" required />
