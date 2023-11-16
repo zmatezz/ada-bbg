@@ -1,10 +1,65 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
+  const history = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    rememberMe: false,
+  });
+
+  useEffect(() => {
+    const savedEmail = localStorage.getItem("savedEmail");
+    const savedPassword = localStorage.getItem("savedPassword");
+
+    if (savedEmail && savedPassword) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        email: savedEmail,
+        password: savedPassword,
+      }));
+    }
+  }, []);
+
+  const handleChange = (event) => {
+    const { name, value, type, checked } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    try {
+      const savedEmail = localStorage.getItem("savedEmail");
+      const savedPassword = localStorage.getItem("savedPassword");
+
+      if (
+        formData.email === savedEmail &&
+        formData.password === savedPassword
+      ) {
+        history("/");
+
+        toast.success("Login bem-sucedido!");
+      } else {
+        toast.error("Credenciais inválidas. Verifique seu e-mail e senha.");
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error);
+      toast.error("Erro ao fazer login. Tente novamente.");
+    }
+  };
   return (
     <div className="w-full  mx-auto flex justify-center  items-center px-8 relative">
-      <form className="flex flex-col bg-[#17151b] p-8 rounded-md   md:w-[400px] h-full w-full  justify-center mx-auto gap-4">
+      <form
+        className="flex flex-col bg-[#17151b] p-8 rounded-md   md:w-[400px] h-full w-full  justify-center mx-auto gap-4"
+        onSubmit={handleSubmit}
+      >
         <div>
           <p className="text-2xl text-center uppercase font-bold text-[#9adc59]">
             Acessar conta
@@ -15,22 +70,32 @@ const Form = () => {
             id="cadastroEmail"
             className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
             type="email"
-            name="Email"
+            name="email"
             placeholder="E-mail"
+            value={formData.email}
+            onChange={handleChange}
             required
           />
 
           <input
             id="cadastroSenha"
             className="bg-[#333] md:h-12 p-2 rounded-md md:p-4 md:text-xl md:placeholder:text-xl placeholder:text-slate-400 outline-none border-[3px] border-slate-600/30 focus:border-[#9adc59] transition-all duration-300"
-            type="text"
-            name="Senha"
+            type="password"
+            name="password"
             placeholder="Senha"
+            value={formData.password}
+            onChange={handleChange}
             required
           />
         </div>
         <div className="flex items-center ml-2 w-full">
-          <input type="checkbox" required />
+          <input
+            type="checkbox"
+            name="rememberMe"
+            checked={formData.rememberMe}
+            onChange={handleChange}
+            required
+          />
           <p className="ml-2 text-sm text-white w-full">
             Mantenha-me conectado
           </p>

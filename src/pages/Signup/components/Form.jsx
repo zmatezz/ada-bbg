@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Form = () => {
+  const history = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -44,6 +46,10 @@ const Form = () => {
 
       if (response.ok) {
         toast.success("Conta criada com sucesso!");
+
+        localStorage.setItem("savedEmail", formData.email);
+        localStorage.setItem("savedPassword", formData.password);
+        history.push("/login");
       } else {
         toast.error("Erro ao criar conta. Tente novamente.");
       }
